@@ -1,0 +1,141 @@
+.content {
+    .title {
+        text-align: center;
+        margin: 0 25%;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        font-size: 40px;
+
+        a {
+            background: linear-gradient(269.99deg, #ed5c66, #f28099);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    }
+
+    .description {
+        text-align: center;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .download {
+        margin-top: 50px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+
+        gap: 20px;
+
+        .code {
+            font-size: 18px;
+            background-color: #2e2e33;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .copy {
+            box-shadow: 0px 6px 21px 1px #ed5c662a;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            border: none;
+            padding: 20px 45px;
+            background: linear-gradient(269.99deg, #ed5c66, #f28099);
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.2s;
+            &:hover {
+                transition: 0.2s;
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .stats {
+        margin-top: 50px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        padding: 0 20%;
+
+        > * {
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            background-color: #2e2e33;
+            width: 200px;
+            height: 200px;
+
+            box-shadow: 0px 6px 21px 1px #0000007a;
+
+            div {
+                font-size: 42px;
+                color: #f28099;
+            }
+        }
+    }
+
+    .terminal {
+        transition: 0.2s;
+        background-color: #2e2e33;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 100px 35%;
+        height: 350px;
+
+        &:hover {
+            transition: 0.2s;
+            box-shadow: 0px 6px 31px 10px #f2809910;
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .content {
+        .stats {
+            margin-top: 50px;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .content {
+        .title {
+            margin: 50px 0;
+        }
+
+        .download {
+            display: none;
+        }
+
+        .stats {
+            margin-top: 50px;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .content {
+        .title {
+            margin: 50px 5%;
+        }
+
+        .download {
+            margin: 0 20px;
+            flex-direction: column;
+        }
+    }
+}

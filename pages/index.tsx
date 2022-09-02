@@ -27,7 +27,7 @@ function App({
     }, []);
 
     useEffect(() => {
-        setDownload(`curl -L ${host}/install | bash`);
+        setDownload(`curl -L ${host}/install | sudo bash`);
     }, [host]);
 
     return (

@@ -83,20 +83,6 @@
             }
         }
     }
-
-    .terminal {
-        transition: 0.2s;
-        background-color: #2e2e33;
-        border-radius: 10px;
-        padding: 20px;
-        margin: 100px 35%;
-        height: 350px;
-
-        &:hover {
-            transition: 0.2s;
-            box-shadow: 0px 6px 31px 10px #f2809910;
-        }
-    }
 }
 
 @media (max-width: 1100px) {

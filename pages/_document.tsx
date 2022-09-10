@@ -20,6 +20,36 @@ export default class MyDocument extends Document {
                         href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
                         rel="stylesheet"
                     />
+                    <meta name="language" content="pt-BR" />
+                    <meta
+                        name="url"
+                        content="https://https://www.rustbase.app/"
+                    />
+                    <meta name="author" content="Rustbase" />
+                    <meta name="Audience" content="all" />
+                    <meta
+                        name="description"
+                        content="A noSQL key-value database cross-platform program written in Rust."
+                    />
+                    <meta
+                        name="keywords"
+                        content="database, nosql, key-value, rust, rustbase, rustbaseapp, dustdata, opensource, lightweight, fast, modern"
+                    />
+                    <meta name="apple-mobile-web-app-capable" content="yes" />
+                    <meta name="mobile-web-app-capable" content="yes" />
+                    <meta
+                        name="apple-mobile-web-app-title"
+                        content="Rustbase"
+                    />
+                    <meta
+                        name="apple-mobile-web-app-status-bar-style"
+                        content="black"
+                    />
+                    <meta name="rating" content="general" />
+                    <meta name="robots" content="ALL, follow" />
+                    <meta name="googlebot" content="ALL" />
+                    <meta name="distribution" content="global" />
+                    <meta name="expires" content="0" />
                 </Head>
                 <body>
                     <Main />

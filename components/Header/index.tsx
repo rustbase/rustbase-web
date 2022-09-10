@@ -24,7 +24,7 @@ function Header() {
                     <span
                         className={styles.item}
                         onClick={() => {
-                            window.location.assign('/docs');
+                            window.location.assign('https://docs.rustbase.app');
                         }}
                     >
                         Docs

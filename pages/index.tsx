@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { GetServerSideProps } from 'next';
 import styles from './App.module.scss';
 import { Header } from '../components/Header';
 import { BsCheck } from 'react-icons/bs';
@@ -9,17 +8,12 @@ const DynTerm = dynamic(() => import('../components/Terminal'), {
     ssr: false,
 });
 
-function App({
-    stars,
-    forks,
-    license,
-}: {
-    stars: number | null;
-    forks: number | null;
-    license: string | null;
-}) {
+function App() {
     const [host, setHost] = useState('');
     const [download, setDownload] = useState('');
+    const [stars, setStars] = useState(0);
+    const [forks, setForks] = useState(0);
+    const [license, setLicense] = useState('');
     const [isCopyClicked, setIsCopyClicked] = useState(false);
 
     useEffect(() => {
@@ -29,6 +23,16 @@ function App({
     useEffect(() => {
         setDownload(`curl -L ${host}/install | bash`);
     }, [host]);
+
+    useEffect(() => {
+        fetch('https://api.github.com/repos/rustbase/rustbase')
+            .then((res) => res.json())
+            .then((data) => {
+                setStars(data.stargazers_count);
+                setForks(data.forks_count);
+                setLicense(data.license.key.toUpperCase());
+            });
+    }, []);
 
     return (
         <div>
@@ -90,26 +94,5 @@ function App({
         </div>
     );
 }
-
-export const getServerSideProps: GetServerSideProps = async () => {
-    const gitFetch = await fetch(
-        'https://api.github.com/repos/rustbase/rustbase'
-    );
-    const data = await gitFetch.json();
-
-    if (gitFetch.status === 403) {
-        return {
-            props: { stars: null, license: null, forks: null },
-        };
-    }
-
-    const stars = data.stargazers_count;
-    const license = data.license.key.toUpperCase();
-    const forks = data.forks;
-
-    return {
-        props: { stars, license, forks },
-    };
-};
 
 export default App;

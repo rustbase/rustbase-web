@@ -24,6 +24,17 @@ function Header() {
                     <span
                         className={styles.item}
                         onClick={() => {
+                            window.location.assign('/docs');
+                        }}
+                    >
+                        Docs
+                    </span>
+                </div>
+
+                <div className={styles.dropdown}>
+                    <span
+                        className={styles.item}
+                        onClick={() => {
                             window.location.assign(
                                 'https://github.com/rustbase/rustbase'
                             );
@@ -34,15 +45,26 @@ function Header() {
                 </div>
 
                 <div className={styles.dropdown}>
-                    <span
-                        className={styles.item}
-                        onClick={() => {
-                            window.location.assign(
-                                'https://github.com/rustbase/dustdata'
-                            );
-                        }}
-                    >
-                        DustData
+                    <span className={styles.item}>Components</span>
+                    <span className={styles.content}>
+                        <button
+                            onClick={() => {
+                                window.location.assign(
+                                    'https://github.com/rustbase/dustdata'
+                                );
+                            }}
+                        >
+                            DustData
+                        </button>
+                        <button
+                            onClick={() => {
+                                window.location.assign(
+                                    'https://github.com/rustbase/rustbase-cli'
+                                );
+                            }}
+                        >
+                            Rustbase CLI
+                        </button>
                     </span>
                 </div>
             </div>

@@ -63,6 +63,7 @@
                 padding: 15px 15px;
                 z-index: 1;
                 border-radius: 10px;
+                gap: 10px;
 
                 flex-direction: column;
 
@@ -78,6 +79,14 @@
                 *:hover {
                     transition: 0.2s;
                     background-color: rgba(100, 100, 100, 0.13);
+                }
+
+                button {
+                    border: none;
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 18px;
+                    padding: 20px 30px;
+                    background-color: transparent;
                 }
             }
 

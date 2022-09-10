@@ -7,7 +7,6 @@ export default class MyDocument extends Document {
             <Html lang="en">
                 <Head>
                     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-                    <title>Rustbase</title>
                     <link
                         rel="preconnect"
                         href="https://fonts.googleapis.com"

@@ -8,7 +8,7 @@ export default function Home() {
 export const getServerSideProps: GetServerSideProps = async () => {
     return {
         redirect: {
-            destination: '/start-here',
+            destination: '/introduction/getting-started',
             permanent: true,
         },
     };

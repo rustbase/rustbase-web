@@ -13,7 +13,6 @@ function App() {
     const [download, setDownload] = useState('');
     const [stars, setStars] = useState<number | null>(null);
     const [forks, setForks] = useState<number | null>(null);
-    const [license, setLicense] = useState('');
     const [isCopyClicked, setIsCopyClicked] = useState(false);
 
     useEffect(() => {
@@ -30,7 +29,6 @@ function App() {
             .then((data) => {
                 setStars(data.stargazers_count);
                 setForks(data.forks_count);
-                setLicense(data.license.key.toUpperCase());
             });
     }, []);
 
@@ -94,8 +92,8 @@ function App() {
                                     <h3>Stars on Github</h3>
                                 </div>
                                 <div>
-                                    <div>{license}</div>
-                                    <h3>License</h3>
+                                    <div>1+</div>
+                                    <h3>Contributors</h3>
                                 </div>
                                 <div>
                                     <div>{forks}</div>
@@ -106,7 +104,24 @@ function App() {
                     </div>
                 </div>
 
-                <DynTerm />
+                <div className={styles.terminal}>
+                    <h1>
+                        <a
+                            style={{
+                                background:
+                                    'linear-gradient(269.99deg, #ed5c66, #f28099)',
+                                backgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                WebkitBackgroundClip: 'text',
+                            }}
+                        >
+                            Simple
+                        </a>{' '}
+                        query language
+                    </h1>
+
+                    <DynTerm />
+                </div>
             </div>
         </div>
     );

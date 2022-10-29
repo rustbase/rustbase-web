@@ -33,7 +33,7 @@ function Header() {
                                 );
                             }}
                         >
-                            Docs
+                            Documentation
                         </span>
                     </div>
 
@@ -96,7 +96,7 @@ function Header() {
                                 );
                             }}
                         >
-                            Docs
+                            Documentation
                         </span>
                         <span
                             className={styles.item}

@@ -11,8 +11,8 @@ const DynTerm = dynamic(() => import('../components/Terminal'), {
 function App() {
     const [host, setHost] = useState('');
     const [download, setDownload] = useState('');
-    const [stars, setStars] = useState(0);
-    const [forks, setForks] = useState(0);
+    const [stars, setStars] = useState<number | null>(null);
+    const [forks, setForks] = useState<number | null>(null);
     const [license, setLicense] = useState('');
     const [isCopyClicked, setIsCopyClicked] = useState(false);
 
@@ -70,23 +70,40 @@ function App() {
                     </button>
                 </div>
 
-                <div className={styles.stats}>
-                    {stars && (
-                        <>
-                            <div>
-                                <div>{stars}</div>
-                                <h3>Stars on Github</h3>
-                            </div>
-                            <div>
-                                <div>{license}</div>
-                                <h3>License</h3>
-                            </div>
-                            <div>
-                                <div>{forks}</div>
-                                <h3>Forks on Github</h3>
-                            </div>
-                        </>
-                    )}
+                <div className={styles.community}>
+                    <h1>
+                        Supported by the{' '}
+                        <a
+                            style={{
+                                background:
+                                    'linear-gradient(269.99deg, #ed5c66, #f28099)',
+                                backgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                WebkitBackgroundClip: 'text',
+                            }}
+                        >
+                            community
+                        </a>
+                    </h1>
+
+                    <div className={styles.stats}>
+                        {stars && forks && (
+                            <>
+                                <div>
+                                    <div>{stars}</div>
+                                    <h3>Stars on Github</h3>
+                                </div>
+                                <div>
+                                    <div>{license}</div>
+                                    <h3>License</h3>
+                                </div>
+                                <div>
+                                    <div>{forks}</div>
+                                    <h3>Forks on Github</h3>
+                                </div>
+                            </>
+                        )}
+                    </div>
                 </div>
 
                 <DynTerm />

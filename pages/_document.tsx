@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
                         href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
                         rel="stylesheet"
                     />
-                    <meta name="language" content="pt-BR" />
+                    <meta name="language" content="en-US" />
                     <meta
                         name="url"
                         content="https://https://www.rustbase.app/"
@@ -51,10 +51,10 @@ export default class MyDocument extends Document {
                     <meta name="distribution" content="global" />
                     <meta name="expires" content="0" />
                 </Head>
-                <body>
+                <main>
                     <Main />
                     <NextScript />
-                </body>
+                </main>
             </Html>
         );
     }

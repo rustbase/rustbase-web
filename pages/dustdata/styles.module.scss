@@ -1,0 +1,59 @@
+.content {
+    .title {
+        text-align: center;
+        margin: 0 25%;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        font-size: 40px;
+        line-height: 1.1;
+
+        a {
+            background: linear-gradient(269.99deg, #ed5c66, #f28099);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    }
+
+    .description {
+        text-align: center;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .download {
+        margin-top: 50px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+
+        gap: 20px;
+
+        .code {
+            font-family: 'Source Code Pro', monospace;
+            font-size: 18px;
+            background-color: #2e2e33;
+            padding: 20px 50px;
+            border-radius: 10px;
+        }
+
+        .copy {
+            box-shadow: 0px 6px 21px 1px #ed5c662a;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            border: none;
+            padding: 20px 45px;
+            background: linear-gradient(269.99deg, #ed5c66, #f28099);
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.2s;
+            &:hover {
+                transition: 0.2s;
+                opacity: 0.8;
+            }
+        }
+    }
+}

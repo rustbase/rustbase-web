@@ -4,7 +4,14 @@ import styles from './styles.module.scss';
 import Icon from '../../public/icon.svg';
 import { AiOutlineMenu } from 'react-icons/ai';
 
-function Header() {
+type Link = {
+    href?: string;
+    label: string;
+    isDropdown: boolean;
+    content?: Link[];
+};
+
+function Header({ links }: { links: Link[] }) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -24,55 +31,62 @@ function Header() {
                 </div>
 
                 <div className={styles.menu}>
-                    <div className={styles.dropdown}>
-                        <span
-                            className={styles.item}
-                            onClick={() => {
-                                window.location.assign(
-                                    'https://docs.rustbase.app'
-                                );
-                            }}
-                        >
-                            Documentation
-                        </span>
-                    </div>
+                    {links
+                        .filter((link) => {
+                            return !link.isDropdown;
+                        })
+                        .map((link) => {
+                            return (
+                                <div
+                                    className={styles.dropdown}
+                                    key={link.label}
+                                >
+                                    <span
+                                        className={styles.item}
+                                        onClick={() => {
+                                            window.location.assign(
+                                                link.href as string
+                                            );
+                                        }}
+                                    >
+                                        {link.label}
+                                    </span>
+                                </div>
+                            );
+                        })}
 
-                    <div className={styles.dropdown}>
-                        <span
-                            className={styles.item}
-                            onClick={() => {
-                                window.location.assign(
-                                    'https://github.com/rustbase/rustbase'
-                                );
-                            }}
-                        >
-                            Github
-                        </span>
-                    </div>
-
-                    <div className={styles.dropdown}>
-                        <span className={styles.item}>Components</span>
-                        <span className={styles.content}>
-                            <button
-                                onClick={() => {
-                                    window.location.assign(
-                                        'https://github.com/rustbase/dustdata'
-                                    );
-                                }}
-                            >
-                                DustData
-                            </button>
-                            <button
-                                onClick={() => {
-                                    window.location.assign(
-                                        'https://github.com/rustbase/rustbase-cli'
-                                    );
-                                }}
-                            >
-                                Rustbase CLI
-                            </button>
-                        </span>
-                    </div>
+                    {links
+                        .filter((link) => {
+                            return link.isDropdown;
+                        })
+                        .map((link) => {
+                            return (
+                                <div
+                                    className={styles.dropdown}
+                                    key={link.label}
+                                >
+                                    <span className={styles.item}>
+                                        {link.label}
+                                    </span>
+                                    <span className={styles.content}>
+                                        {link.content?.map((content) => {
+                                            return (
+                                                <button
+                                                    key={content.label}
+                                                    onClick={() => {
+                                                        window.location.assign(
+                                                            content.href as string
+                                                        );
+                                                    }}
+                                                >
+                                                    {content.label}
+                                                </button>
+                                            );
+                                        })}
+                                    </span>
+                                </div>
+                            );
+                        })}
                 </div>
 
                 <div>

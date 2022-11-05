@@ -34,7 +34,36 @@ function App() {
 
     return (
         <div>
-            <Header />
+            <Header
+                links={[
+                    {
+                        isDropdown: false,
+                        href: 'https://docs.rustbase.app',
+                        label: 'Documentation',
+                    },
+                    {
+                        isDropdown: false,
+                        href: 'https://github.com/rustbase/rustbase',
+                        label: 'GitHub',
+                    },
+                    {
+                        isDropdown: true,
+                        label: 'Components',
+                        content: [
+                            {
+                                isDropdown: false,
+                                href: '/dustdata',
+                                label: 'DustData',
+                            },
+                            {
+                                isDropdown: false,
+                                href: 'https://github.com/rustbase/rustbase-cli',
+                                label: 'Rustbase CLI',
+                            },
+                        ],
+                    },
+                ]}
+            />
 
             <div className={styles.content}>
                 <h1 className={styles.title}>

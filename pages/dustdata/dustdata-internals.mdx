@@ -1,0 +1,27 @@
+# DustData Internals
+
+This section describes the internals of the DustData library. It is not necessary to understand this section to use the
+library. The DustData is seperated into five parts: Memtable, SSTable, Index, Filter and Logs.
+
+## Memtable
+
+Memtable is a temporary storage for the data that is not yet flushed to disk. If Memtable reaches a certain size, it is
+flushed to disk and a new Memtable is created. The Memtable is implemented as a Binary Tree.
+
+## SSTable
+
+SSTable is a sorted table on disk. It is a file that contains the data that is flushed from Memtable. The data is sorted
+by key. The SSTable is implemented as a Binary Tree.
+
+## Index
+
+Index is a file that contains the index of the SSTable. It is a file that contains the offset of the key in the SSTable.
+
+## Filter
+
+Filter is a file that contains the bloom filter of the SSTable. It is a file that contains the bloom filter of the keys in
+the SSTable.
+
+## Logs
+
+Logs is a file that contains the logs of the SSTable. It is a file that contains the logs of the SSTable.

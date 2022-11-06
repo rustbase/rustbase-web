@@ -1,0 +1,84 @@
+# Introduction
+
+This document provides a overview of how to use RBQL (Rustbase Query Language) to query Rustbase. RBQL is not a SQL-like, so it is not a replacement for SQL. However, it is a very powerful tool for querying Rustbase. It is also very easy to learn and use. This document is intended to be a quick start guide for using RBQL.
+
+## Concepts
+
+Rustbase is a key-value database, you can separe data into a `databases`. If you insert a new data into a database, the database will be created automatically.
+
+### Switching databases in Rustbase CLI
+
+To switch databases in Rustbase CLI, you can use the `!database` command. For example, if you want to switch to the `test` database, you can use the following command:
+
+```
+!database users
+```
+
+## Inserting data
+
+You can insert data into a database by using the `insert` command. The `insert` command takes two arguments, the first argument is the data you want to insert, and then a `in` keyword, and then the key. The key must be unique and cannot be empty. The data can be any type of data, but it must be a valid JSON string.
+
+```
+insert {"name": "John", "age": 20} in user:1
+```
+
+## Getting data
+
+You can get a value with the key by using the `get` command. The `get` command takes one argument, the key. The key must be unique and cannot be empty.
+
+```
+get user:1
+```
+
+## Updating data
+
+You can update a value with the key by using the `update` command. The `update` command takes two arguments, the first argument is the data you want to update, and then a `in` keyword, and then the key.
+
+```
+update {"name": "Joe Mamma", "age": 21} in user:1
+```
+
+## Deleting data
+
+To delete a value, you can use `delete`. The `delete` command takes one argument, the key. The key cannot be empty.
+
+```
+delete user:1
+```
+
+## Deleting database
+
+To delete a database you can use `delete` keyword followed by `database` keyword, and then the database name. The database name cannot be empty.
+
+```
+delete database users
+```
+
+## Listing databases
+
+To list all keys in database, you can use the `list` keyword followed by `databases` keyword. The `list` keyword had a optional argument that is the database name. If you don't specify the database name, it will list all databases.
+
+```
+list
+```
+
+or
+
+```
+list passwords <- Another database
+```
+
+## Alias
+
+On RBQL you can use alias to make your query more shorter. For example, if you want delete a database you can use `del` instead of `delete` or `db` instead of `database`.
+
+```
+del db users
+```
+
+### All aliases
+
+-   `del` instead of `delete`
+-   `db` instead of `database`
+-   `upd` instead of `update`
+-   `ls` instead of `list`

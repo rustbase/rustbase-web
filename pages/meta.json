@@ -1,3 +1,5 @@
 {
-    "introduction": "Introduction"
+    "introduction": "Introduction",
+    "dustdata": "DustData",
+    "rustbase-internals": "Rustbase Internals"
 }

@@ -102,45 +102,54 @@ function Header({ links }: { links: Link[] }) {
             {isOpen && (
                 <>
                     <div className={styles.mobile}>
-                        <span
-                            className={styles.item}
-                            onClick={() => {
-                                window.location.assign(
-                                    'https://docs.rustbase.app'
+                        {links
+                            .filter((link) => {
+                                return !link.isDropdown;
+                            })
+                            .map((link) => {
+                                return (
+                                    <span
+                                        key={link.label}
+                                        className={styles.item}
+                                        onClick={() => {
+                                            window.location.assign(
+                                                link.href as string
+                                            );
+                                        }}
+                                    >
+                                        {link.label}
+                                    </span>
                                 );
-                            }}
-                        >
-                            Documentation
-                        </span>
-                        <span
-                            className={styles.item}
-                            onClick={() => {
-                                window.location.assign(
-                                    'https://github.com/rustbase/rustbase'
-                                );
-                            }}
-                        >
-                            Github
-                        </span>
+                            })}
 
-                        <span
-                            onClick={() => {
-                                window.location.assign(
-                                    'https://github.com/rustbase/dustdata'
+                        {links
+                            .filter((link) => {
+                                return link.isDropdown;
+                            })
+                            .map((link) => {
+                                return (
+                                    <div key={link.label}>
+                                        <p className={styles.dropdown}>
+                                            {link.label}
+                                        </p>
+                                        {link.content?.map((content) => {
+                                            return (
+                                                <div
+                                                    className={styles.content}
+                                                    key={content.label}
+                                                >
+                                                    <a
+                                                        href={content.href}
+                                                        className={styles.link}
+                                                    >
+                                                        {content.label}
+                                                    </a>
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
                                 );
-                            }}
-                        >
-                            DustData
-                        </span>
-                        <span
-                            onClick={() => {
-                                window.location.assign(
-                                    'https://github.com/rustbase/rustbase-cli'
-                                );
-                            }}
-                        >
-                            Rustbase CLI
-                        </span>
+                            })}
                     </div>
                     <div
                         onClick={() => {

@@ -117,7 +117,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
-    gap: 20px;
+    gap: 5px;
 
     span {
         cursor: pointer;
@@ -141,6 +141,42 @@
         &:hover,
         &:focus {
             background-size: 0 0.1em, 100% 0.1em;
+        }
+    }
+
+    .dropdown {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .content {
+        text-align: center;
+
+        .link {
+            text-decoration: none;
+            cursor: pointer;
+
+            color: inherit;
+            background: linear-gradient(
+                    to right,
+                    rgba(255, 255, 255, 0.1),
+                    rgba(255, 255, 255, 0.1)
+                ),
+                linear-gradient(to right, #ed5c66, #f28099);
+            background-size: 100% 0.1em, 0 0.1em;
+            background-position: 100% 100%, 0 100%;
+            background-repeat: no-repeat;
+            transition: background-size 400ms;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            &:hover,
+            &:focus {
+                background-size: 0 0.1em, 100% 0.1em;
+            }
         }
     }
 }

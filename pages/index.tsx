@@ -47,6 +47,11 @@ function App() {
                         label: 'GitHub',
                     },
                     {
+                        isDropdown: false,
+                        href: 'https://donate.stripe.com/4gw8xx3wc1Uyb96288',
+                        label: 'Donate',
+                    },
+                    {
                         isDropdown: true,
                         label: 'Components',
                         content: [

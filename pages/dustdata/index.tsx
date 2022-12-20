@@ -25,6 +25,11 @@ function DustData() {
                         isDropdown: false,
                     },
                     {
+                        isDropdown: false,
+                        href: 'https://donate.stripe.com/4gw8xx3wc1Uyb96288',
+                        label: 'Donate',
+                    },
+                    {
                         label: 'GitHub',
                         href: 'https://github.com/rustbase/dustdata',
                         isDropdown: false,

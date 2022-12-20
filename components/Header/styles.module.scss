@@ -57,16 +57,22 @@
             }
 
             .content {
-                display: none;
+                opacity: 0;
+                visibility: hidden;
+                display: flex;
                 position: absolute;
                 background-color: #121214;
                 border: rgba(255, 255, 255, 0.137) solid 1px;
-                padding: 15px 30px;
+                padding: 15px;
                 z-index: 1;
                 border-radius: 10px;
-                gap: 10px;
+                gap: 5px;
 
                 flex-direction: column;
+
+                transform: translate(0, -2px);
+
+                transition: opacity 0.2s, transform 0.2s;
 
                 * {
                     padding: 20px;
@@ -86,13 +92,16 @@
                     border: none;
                     font-family: 'Raleway', sans-serif;
                     font-size: 18px;
-                    padding: 15px 40px;
+                    font-weight: bold;
+                    padding: 15px 30px;
                     background-color: transparent;
                 }
             }
 
             &:hover .content {
-                display: flex;
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0, 0);
             }
         }
     }

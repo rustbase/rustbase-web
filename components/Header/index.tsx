@@ -37,21 +37,15 @@ function Header({ links }: { links: Link[] }) {
                         })
                         .map((link) => {
                             return (
-                                <div
+                                <a
                                     className={styles.dropdown}
                                     key={link.label}
+                                    href={link.href as string}
                                 >
-                                    <span
-                                        className={styles.item}
-                                        onClick={() => {
-                                            window.location.assign(
-                                                link.href as string
-                                            );
-                                        }}
-                                    >
+                                    <span className={styles.item}>
                                         {link.label}
                                     </span>
-                                </div>
+                                </a>
                             );
                         })}
 
@@ -71,16 +65,14 @@ function Header({ links }: { links: Link[] }) {
                                     <span className={styles.content}>
                                         {link.content?.map((content) => {
                                             return (
-                                                <button
+                                                <a
+                                                    href={
+                                                        content.href as string
+                                                    }
                                                     key={content.label}
-                                                    onClick={() => {
-                                                        window.location.assign(
-                                                            content.href as string
-                                                        );
-                                                    }}
                                                 >
                                                     {content.label}
-                                                </button>
+                                                </a>
                                             );
                                         })}
                                     </span>

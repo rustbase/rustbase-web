@@ -28,6 +28,12 @@
         gap: 20px;
         display: flex;
 
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: white;
+        }
+
         .dropdown {
             position: relative;
             display: inline-block;
@@ -88,7 +94,7 @@
                     background-color: rgba(100, 100, 100, 0.13);
                 }
 
-                button {
+                a {
                     border: none;
                     font-family: 'Raleway', sans-serif;
                     font-size: 18px;

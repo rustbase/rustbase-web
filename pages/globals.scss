@@ -8,3 +8,13 @@ body {
 .xterm-viewport::-webkit-scrollbar {
     display: none;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#ed5c66, #f28099);
+    border-radius: 10px;
+}

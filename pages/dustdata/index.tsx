@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Header } from '../../components/Header';
 import styles from './styles.module.scss';
 import { BsCheck } from 'react-icons/bs';
+import Head from 'next/head';
 
 function DustData() {
     const [ddVersion, setDDVersion] = useState('');
@@ -17,6 +18,12 @@ function DustData() {
 
     return (
         <div className={styles.content}>
+            <Head>
+                <title>
+                    DustData - A data concurrency control key-value storage
+                    engine to Rustbase.
+                </title>
+            </Head>
             <Header
                 links={[
                     {

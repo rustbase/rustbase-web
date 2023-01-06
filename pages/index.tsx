@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import Head from 'next/head';
 import styles from './App.module.scss';
 import { Header } from '../components/Header';
 import { BsCheck } from 'react-icons/bs';
@@ -34,6 +35,12 @@ function App() {
 
     return (
         <div>
+            <Head>
+                <title>
+                    Rustbase - A noSQL key-value database cross-platform program
+                    written in Rust.
+                </title>
+            </Head>
             <Header
                 links={[
                     {

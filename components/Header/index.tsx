@@ -30,6 +30,8 @@ function Header({ links }: { links: Link[] }) {
                     />
                 </div>
 
+                <div></div>
+
                 <div className={styles.menu}>
                     {links
                         .filter((link) => {
@@ -81,10 +83,9 @@ function Header({ links }: { links: Link[] }) {
                         })}
                 </div>
 
-                <div>
+                <div className={styles.menuMobile}>
                     <AiOutlineMenu
                         size={35}
-                        className={styles.menuMobile}
                         onClick={() => {
                             setIsOpen(!isOpen);
                         }}
@@ -120,10 +121,16 @@ function Header({ links }: { links: Link[] }) {
                             })
                             .map((link) => {
                                 return (
-                                    <div key={link.label}>
-                                        <p className={styles.dropdown}>
-                                            {link.label}
-                                        </p>
+                                    <div
+                                        key={link.label}
+                                        style={{
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            gap: '10px',
+                                        }}
+                                    >
                                         {link.content?.map((content) => {
                                             return (
                                                 <div

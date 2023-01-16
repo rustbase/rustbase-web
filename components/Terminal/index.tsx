@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './styles.module.scss';
+import dracula from './dracula.json';
 
 import { Terminal } from 'xterm';
 import { FitAddon } from 'xterm-addon-fit';
@@ -13,7 +14,8 @@ function Term() {
             cursorBlink: true,
             fontSize: 20,
             theme: {
-                background: '#2e2e33',
+                background: '#121214',
+                ...dracula,
             },
             fontFamily: '"Source Code Pro", monospace',
         });
@@ -32,10 +34,14 @@ function Term() {
                 fitAddon.fit();
             };
 
-            term.writeln('RUSTBASE> insert {"a": "b"} in key');
+            term.writeln('RUSTBASE> insert "something here" in key');
             term.writeln('\x1b[32m[Success]\x1b[0m ok');
             term.writeln('RUSTBASE> get key');
-            term.writeln('{"a": "b"}');
+            term.writeln('"something here"');
+            term.writeln('RUSTBASE> update "another thing..." in key');
+            term.writeln('\x1b[32m[Success]\x1b[0m ok');
+            term.writeln('RUSTBASE> delete key');
+            term.writeln('\x1b[32m[Success]\x1b[0m ok');
             term.write('RUSTBASE> ');
         }
 

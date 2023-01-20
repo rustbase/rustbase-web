@@ -34,11 +34,11 @@ function Term() {
                 fitAddon.fit();
             };
 
-            term.writeln('RUSTBASE> insert "something here" in key');
+            term.writeln('RUSTBASE> insert "something here" into key');
             term.writeln('\x1b[32m[Success]\x1b[0m ok');
             term.writeln('RUSTBASE> get key');
             term.writeln('"something here"');
-            term.writeln('RUSTBASE> update "another thing..." in key');
+            term.writeln('RUSTBASE> update "another thing..." into key');
             term.writeln('\x1b[32m[Success]\x1b[0m ok');
             term.writeln('RUSTBASE> delete key');
             term.writeln('\x1b[32m[Success]\x1b[0m ok');

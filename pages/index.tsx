@@ -122,7 +122,10 @@ function App() {
                     </div>
 
                     <p className={styles.description}>
-                        Supported on Linux & WSL
+                        Supported on Linux & WSL, see all supported platforms{' '}
+                        <a href="https://github.com/rustbase/rustbase#supported-platforms">
+                            here
+                        </a>
                     </p>
                 </div>
 

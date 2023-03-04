@@ -177,6 +177,25 @@
             font-size: 20px;
             color: rgba(255, 255, 255, 0.8);
             margin: 0 20%;
+
+            a {
+                color: #f28099;
+                background: linear-gradient(
+                        to right,
+                        rgba(255, 255, 255, 0.1),
+                        rgba(255, 255, 255, 0.1)
+                    ),
+                    linear-gradient(to right, #ed5c66, #f28099);
+                background-size: 100% 0.1em, 0 0.1em;
+                background-position: 100% 100%, 0 100%;
+                background-repeat: no-repeat;
+                transition: background-size 400ms;
+                text-decoration: none;
+                &:hover,
+                &:focus {
+                    background-size: 0 0.1em, 100% 0.1em;
+                }
+            }
         }
     }
 

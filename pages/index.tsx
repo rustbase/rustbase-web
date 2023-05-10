@@ -44,19 +44,20 @@ const links = [
     },
 ];
 
+const shellCommands = {
+    docker: 'docker pull ghcr.io/rustbase/rustbase:latest',
+    posix: 'curl -L #/install | bash',
+};
+
 function App() {
     const [host, setHost] = useState('');
-    const [download, setDownload] = useState('');
+    const [installShCommand, setInstallShCommand] = useState('docker');
     const [stars, setStars] = useState<number | null>(null);
     const [forks, setForks] = useState<number | null>(null);
 
     useEffect(() => {
         setHost(`${window.location.protocol}//${window.location.host}`);
     }, []);
-
-    useEffect(() => {
-        setDownload(`curl -L ${host}/install | bash`);
-    }, [host]);
 
     useEffect(() => {
         fetch('https://api.github.com/repos/rustbase/rustbase')
@@ -101,15 +102,51 @@ function App() {
                         Easy to <span>install</span>
                     </h1>
 
+                    <div className={styles.installOpts}>
+                        <div
+                            className={styles.button}
+                            onClick={() => setInstallShCommand('docker')}
+                            style={{
+                                backgroundColor:
+                                    installShCommand === 'docker'
+                                        ? '#e96379'
+                                        : '#17171a',
+                            }}
+                        >
+                            Docker
+                        </div>
+
+                        <div
+                            className={styles.button}
+                            onClick={() => setInstallShCommand('posix')}
+                            style={{
+                                backgroundColor:
+                                    installShCommand === 'posix'
+                                        ? '#e96379'
+                                        : '#17171a',
+                            }}
+                        >
+                            POSIX
+                        </div>
+                    </div>
+
                     <div className={styles.clipboard}>
-                        <code className={styles.code}>$ {download}</code>
+                        <code className={styles.code}>
+                            ${' '}
+                            {shellCommands[installShCommand].replace('#', host)}
+                        </code>
                         <div id="copy" className={styles.copy}>
                             <button
                                 onClick={(e) => {
                                     document
                                         .getElementById('copy')
                                         .setAttribute('clicked', 'true');
-                                    navigator.clipboard.writeText(download);
+                                    navigator.clipboard.writeText(
+                                        shellCommands[installShCommand].replace(
+                                            '#',
+                                            host
+                                        )
+                                    );
                                 }}
                             >
                                 Copy{' '}

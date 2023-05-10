@@ -79,6 +79,31 @@
 
         gap: 50px;
 
+        .installOpts {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            background-color: #121214;
+            padding: 20px 30px;
+            border-radius: 10px;
+
+            .button {
+                cursor: pointer;
+                transition: 0.2s;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                font-family: 'Inter';
+                border: 0;
+                padding: 15px 30px;
+                border-radius: 10px;
+                font-size: 16px;
+            }
+        }
+
         .title {
             text-align: center;
             margin: 0 25%;
